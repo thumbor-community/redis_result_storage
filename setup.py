@@ -22,10 +22,13 @@ TESTS_REQUIREMENTS = [
     "pytest-asyncio==0.*,>=0.23.2",
 ]
 
+DEV_REQUIREMENTS = [
+    "pre-commit==3.*,>=3.6.0",
+]
+
 RUNTIME_REQUIREMENTS = [
     "redis==5.*,>=5.0.1",
     "thumbor==7.*,>=7.7.2",
-    "pre-commit==3.*,>=3.6.0",
 ]
 
 setup(
@@ -45,7 +48,7 @@ setup(
     ],
     install_requires=RUNTIME_REQUIREMENTS,
     extras_require={
-        "all": RUNTIME_REQUIREMENTS,
+        "all": RUNTIME_REQUIREMENTS + DEV_REQUIREMENTS,
         "tests": RUNTIME_REQUIREMENTS + TESTS_REQUIREMENTS,
     },
 )
